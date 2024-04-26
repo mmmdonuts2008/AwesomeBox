@@ -24,9 +24,6 @@
 		"typescript": "^4.9.5"
 	},
 	"dependencies": {
-		"@types/jquery": "^3.5.29",
-		"@types/select2": "^4.0.63",
-		"imperative-html": "^0.1.0",
-		"select2": "^4.0.13"
+		"imperative-html": "^0.1.0"
 	}
 }
