@@ -10,11 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JummBox</title>
-    <meta name="application-name" content="JummBox" />
-    <meta name="apple-mobile-web-app-title" content="JummBox">
-	<meta name="description" content="JummBox is an online tool for sketching and sharing instrumental music." />
-    <meta name="keywords" content="chiptune, instrumental, music, song, melody, composition, tool, free, square wave, NES, NSF, JummBox, jummbox, BeepBox, beepbox" />
+    <title>AwesomeBox</title>
+    <meta name="application-name" content="AwesomeBox" />
+    <meta name="apple-mobile-web-app-title" content="AwesomeBox">
+	<meta name="description" content="AwesomeBox is an online tool for sketching and sharing instrumental music." />
+    <meta name="keywords" content="chiptune, instrumental, music, song, melody, composition, tool, free, square wave, NES, NSF, JummBox, jummbox, BeepBox, beepbox, AwesomeBox" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,8 +22,8 @@
     <meta name="msapplication-TileColor" content="#603cba" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon_32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/ab icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/ab icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet" media="none" onload="if (this.media != 'all') this.media='all';" /> <!-- this is a trick to load CSS asynchronously. -->
     <style type="text/css">
@@ -149,7 +149,7 @@
 <body>
     <div id="beepboxEditorContainer">
         <noscript>
-            Sorry, JummBox requires a JavaScript-enabled browser.
+            Sorry, AwesomeBox requires a JavaScript-enabled browser.
         </noscript>
     </div>
     <div id="text-content">
@@ -162,11 +162,11 @@
             
             <p id="introduction">
                 This is an online tool for sketching and sharing chiptune melodies.<br>
-                It is a modification of the <a href="https://www.beepbox.co/">original BeepBox</a> by John Nesky.
+                It is a modification of jummbox, which is also a mod of the <a href="https://www.beepbox.co/">original BeepBox</a> by John Nesky.
             </p>
             <p>
                 If you're familiar with BeepBox and just want to learn what JummBox does differently, check out this <a href="https://youtu.be/26yDP4ACuzE">overview video</a>.
-                You can also find the latest patch notes <a href="https://jummb.us/patch_notes/2.6.html">here</a>.
+                You can also find the latest patch notes of JummBox <a href="https://jummb.us/patch_notes/2.6.html">here</a>. Patch notes for AwesomeBox are on the Github site.
             </p>
             <p>
                 All song data is contained in the URL at the top of your browser.
@@ -265,26 +265,26 @@
                         About
                     </h2>
                     <p>
-                        JummBox is developed by Jummbus. He doesn't really use Twitter or any social media any more, but if you have an urgent need to contact him, he can be reached via the BeepBox Discord.<br><br>
+                        JummBox is developed by Jummbus, and AwesomeBox is being developed by mmm_donuts2008. Jummbus doesn't really use Twitter or any social media any more, but if you have an urgent need to contact him, he can be reached via the BeepBox Discord. You can also contact mmm_donuts on discord.<br><br>
                         BeepBox was originally developed by <a href="http://www.johnnesky.com" target="_blank">John Nesky</a>, also known as <a href="https://twitter.com/shaktool" target="_blank">@shaktool</a>.
                     </p>
 					<p>
 						The next oldest version of JummBox is available <a href=https://jummbus.bitbucket.io/2_4>here</a>.
 					</p>
                     <p>
-                        JummBox does not claim ownership over songs created with it, so original songs belong to their authors.
+                        AwesomeBox does not claim ownership over songs created with it, so original songs belong to their authors.
                     </p>
                     <p>
-                        Neither Jummbus nor Jummbox assume responsibility for any copyrighted material played on JummBox. No songs are ever received, recorded, or distributed by JummBox's servers. All song data is contained in the URL after the hash (#) mark, and JummBox running inside your browser converts that data into sound waves.
+                        Neither mmm_donuts2008 nor AwesomeBox assume responsibility for any copyrighted material played on AwesomeBox. No songs are ever received, recorded, or distributed by AwesomeBox's servers. All song data is contained in the URL after the hash (#) mark, and AwesomeBox running inside your browser converts that data into sound waves.
                     </p>
                     <p>
-                        JummBox does not collect, track, or share any user data.
+                        AwesomeBox does not collect, track, or share any user data.
                     </p>
                     <p id="offline-instructions">
                         You can download <a download="jummbox_offline.html" href="jummbox_offline.html">an offline version of JummBox</a> to use when you don't have access to the internet. The features are otherwise the same.
                     </p>
                     <p>
-                        You can download and use <a href="https://github.com/jummbus/jummbox" target="_blank">the source code</a> under the MIT license.
+                        You can download and use <a href="https://github.com/jummbus/jummbox" target="_blank">the source code for JummBox</a> under the MIT license, as well as the source code for AwesomeBox under the sam license https://github.com/mmmdonuts2008/AwesomeBox.
                         The original BeepBox source code by John Nesky can be found <a href="https://github.com/johnnesky/beepbox" target="_blank">here</a>.
                     </p>
                 </section>
@@ -318,7 +318,7 @@
         }
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|android|ipad|playbook|silk/i.test(navigator.userAgent)) {
-            document.getElementById("introduction").innerHTML = "JummBox is an online tool for sketching and sharing chiptune melodies. Make sure that your volume is turned up, then press the play button!";
+            document.getElementById("introduction").innerHTML = "AwesomeBox is an online tool for sketching and sharing chiptune melodies. Make sure that your volume is turned up, then press the play button!";
             document.getElementById("keyboard-instructions").style.display = "none";
 			document.getElementById("mobile-instructions").style.display = "";
             document.getElementById("bar-editing").innerHTML = "Tap the boxes to move to a different part of the song, or tap on the currently selected box to swap which pattern is played during that part of the song.";

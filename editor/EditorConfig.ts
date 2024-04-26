@@ -23,8 +23,8 @@ export function prettyNumber(value: number): string {
 }
 
 export class EditorConfig {
-    public static readonly version: string = "2.6"; // Not using patch versions in display right now, maybe someday.
-    public static readonly versionDisplayName: string = "JummBox " + EditorConfig.version;
+    public static readonly version: string = "0.1-b"; // Not using patch versions in display right now, maybe someday.
+    public static readonly versionDisplayName: string = "AwesomeBox " + EditorConfig.version;
 
     public static readonly releaseNotesURL: string = "https://jummbus.bitbucket.io/patch_notes/" + EditorConfig.version + ".html";
 
