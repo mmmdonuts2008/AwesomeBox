@@ -1,7 +1,7 @@
 {
-	"name": "BeepBox",
-	"short_name": "BeepBox",
-	"description": "BeepBox is a tool for sketching and sharing instrumental melodies.",
+	"name": "AwesomeBox",
+	"short_name": "AwesomeBox",
+	"description": "AwesomeBox is a tool for sketching and sharing instrumental melodies.",
 	"scope": "/",
 	"start_url": ".",
 	"display": "browser",
@@ -10,7 +10,7 @@
 	"background_color": "#000",
 	"categories": ["music"],
 	"icons": [
-		{ "src": "/icon_shadow_192.png",   "sizes": "192x192", "type": "image/png", "purpose": "any" },
-		{ "src": "/icon_maskable_192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" }
+		{ "src": "/ab icon.png",   "sizes": "192x192", "type": "image/png", "purpose": "any" },
+		{ "src": "/ab icon.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" }
 	]
 }
