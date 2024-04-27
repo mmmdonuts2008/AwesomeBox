@@ -49,7 +49,7 @@ export class EditorConfig {
             ])
         },
         {
-            name: "AwesomeBox Chip Presets", presets: toNameMap([
+            name: "AwesomeBox Chip Presets", presets: <DictionaryArray<Preset>>toNameMap([
                 { name: "1/4 pulse lead", midiProgram: 80, settings:{ "type":"chip","eqFilter":[{"type":"low-pass","cutoffHz":11313.71,"linearGain":1},{"type":"high-pass","cutoffHz":105.11,"linearGain":0.3536}],"eqFilterType":false,"eqSimpleCut":10,"eqSimplePeak":0,"envelopeSpeed":12,"discreteEnvelope":false,"eqSubFilters0":[{"type":"low-pass","cutoffHz":11313.71,"linearGain":1},{"type":"high-pass","cutoffHz":105.11,"linearGain":0.3536}],"effects":["transition type","vibrato","distortion","bitcrusher","chorus","echo","reverb"],"transition":"normal","clicklessTransition":false,"vibrato":"delayed","vibratoDepth":0.3,"vibratoDelay":18.5,"vibratoSpeed":10,"vibratoType":0,"distortion":14,"aliases":true,"bitcrusherOctave":5,"bitcrusherQuantization":14,"chorus":14,"echoSustain":29,"echoDelayBeats":0.417,"reverb":10,"fadeInSeconds":0,"fadeOutTicks":-1,"wave":"1/4 pulse","unison":"none","envelopes":[]}}
             ])    
         },       
