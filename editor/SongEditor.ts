@@ -418,6 +418,9 @@ export class SongEditor {
         option({ value: "colorTheme" }, "Set Theme..."),
         option({ value: "recordingSetup" }, "Note Recording..."),
     );
+
+
+
     private readonly _scaleSelect: HTMLSelectElement = buildOptions(select(), Config.scales.map(scale => scale.name));
     private readonly _keySelect: HTMLSelectElement = buildOptions(select(), Config.keys.map(key => key.name).reverse());
     private readonly _tempoSlider: Slider = new Slider(input({ style: "margin: 0; vertical-align: middle;", type: "range", min: "30", max: "320", value: "160", step: "1" }), this._doc, (oldValue: number, newValue: number) => new ChangeTempo(this._doc, oldValue, newValue), false);
@@ -792,7 +795,10 @@ export class SongEditor {
                 span({ class: "tip", onclick: () => this._openPrompt("rhythm") }, "Rhythm: "),
                 div({ class: "selectContainer" }, this._rhythmSelect),
             ),
-        ),
+            div({ class: "selectRow" },
+                span({ class: "tip", onclick: () => this._openPrompt("AwesomeBox's Awesome Advice") }, "AwesomeBox's Awesome Advice: "), 
+            ),
+        ),  
     );
     private readonly _instrumentSettingsArea: HTMLDivElement = div({ class: "instrument-settings-area" },
         this._instrumentSettingsGroup,
