@@ -795,9 +795,7 @@ export class SongEditor {
                 span({ class: "tip", onclick: () => this._openPrompt("rhythm") }, "Rhythm: "),
                 div({ class: "selectContainer" }, this._rhythmSelect),
             ),
-            div({ class: "selectRow" },
-                span({ class: "tip", onclick: () => this._openPrompt("AwesomeBox's Awesome Advice") }, "AwesomeBox's Awesome Advice: "), 
-            ),
+           
         ),  
     );
     private readonly _instrumentSettingsArea: HTMLDivElement = div({ class: "instrument-settings-area" },
