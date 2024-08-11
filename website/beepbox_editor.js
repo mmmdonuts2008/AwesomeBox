@@ -30199,7 +30199,12 @@ You should be redirected to the song at:<br /><br />
             this._playSoundButton = button$f({ type: "button" }, span$4("Play sound"));
             this._sounds = [
                 audio({ src: "happy-happy-happy-song.mp3", style: "display: none;" }),
-                audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" })
+                audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" }),
+                audio({ src: "tuco-get-out.mp3", style: "display: none;" }),
+                audio({ src: "blue-lobster-meme.mp3", style: "display: none;" }),
+                audio({ src: "do-not-open (1).mp3", style: "display: none;" }),
+                audio({ src: "Ghost.mp3", style: "display: none;" }),
+                audio({ src: "roblox-explosion-sound.mp3", style: "display: none;" })
             ];
             this.prompt = null;
             this._keyboardLayout = new KeyboardLayout(this._doc);

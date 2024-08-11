@@ -333,7 +333,12 @@ export class SongEditor {
     private readonly _playSoundButton: HTMLButtonElement = button({ type: "button" }, span("Play sound"));
     private readonly _sounds: HTMLAudioElement[] = [
       audio({ src: "happy-happy-happy-song.mp3", style: "display: none;" }), // These need to be in the website folder
-      audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" })
+      audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" }),
+      audio({ src: "tuco-get-out.mp3", style: "display: none;" }),
+      audio({ src: "blue-lobster-meme.mp3", style: "display: none;" }),
+      audio({ src: "do-not-open (1).mp3", style: "display: none;" }),
+      audio({ src: "Ghost.mp3", style: "display: none;" }),
+      audio({ src: "roblox-explosion-sound.mp3", style: "display: none;" })
     ];
 
 
