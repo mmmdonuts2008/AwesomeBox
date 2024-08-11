@@ -337,7 +337,7 @@ export class SongEditor {
       audio({ src: "tuco-get-out.mp3", style: "display: none;" }),
       audio({ src: "blue-lobster-meme.mp3", style: "display: none;" }),
       audio({ src: "do-not-open (1).mp3", style: "display: none;" }),
-      audio({ src: "Ghost.mp3", style: "display: none;" }),
+      audio({ src: "Ghost.wav", style: "display: none;" }),
       audio({ src: "roblox-explosion-sound.mp3", style: "display: none;" })
     ];
 
