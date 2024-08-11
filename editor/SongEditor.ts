@@ -45,7 +45,7 @@ import { ChangeTempo, ChangeChorus, ChangeEchoDelay, ChangeEchoSustain, ChangeRe
 
 import { TrackEditor } from "./TrackEditor";
 
-const { button, div, input, select, span, optgroup, option, canvas } = HTML;
+const { button, div, input, select, span, optgroup, option, canvas, audio } = HTML;
 
 function buildOptions(menu: HTMLSelectElement, items: ReadonlyArray<string | number>): HTMLSelectElement {
     for (let index: number = 0; index < items.length; index++) {
@@ -330,6 +330,14 @@ class CustomChipCanvas {
 }
 
 export class SongEditor {
+    private readonly _playSoundButton: HTMLButtonElement = button({ type: "button" }, span("Play sound"));
+    private readonly _sounds: HTMLAudioElement[] = [
+      audio({ src: "happy-happy-happy-song.mp3", style: "display: none;" }), // These need to be in the website folder
+      audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" })
+    ];
+
+
+  
     public prompt: Prompt | null = null;
 
     private readonly _keyboardLayout: KeyboardLayout = new KeyboardLayout(this._doc);
@@ -760,6 +768,12 @@ export class SongEditor {
     );
     private readonly _songSettingsArea: HTMLDivElement = div({ class: "song-settings-area" },
         div({ class: "editor-controls" },
+            // ...
+            this._playSoundButton,
+            ...this._sounds,
+            // ...
+          ),
+        div({ class: "editor-controls" },
             div({ class: "editor-song-settings" },
                 div({ style: "margin: 3px 0; position: relative; text-align: center; color: ${ColorConfig.secondaryText};" },
                     div({ class: "tip", style: "flex-shrink: 0; position:absolute; left: 0; top: 0; width: 12px; height: 12px", onclick: () => this._openPrompt("usedPattern") },
@@ -875,7 +889,15 @@ export class SongEditor {
     private _modRecTimeout: number = -1;
 
     constructor(private _doc: SongDocument) {
-
+        this._playSoundButton.addEventListener("click", (event) => {
+            const sound: HTMLAudioElement | null = this._sounds[Math.floor(Math.random() * this._sounds.length)];
+            if (sound != null) {
+              sound.currentTime = 0; // If already playing, restart.
+              sound.play();
+            }
+          });
+        
+      
         this._doc.notifier.watch(this.whenUpdated);
         this._doc.modRecordingHandler = () => { this.handleModRecording() };
         new MidiInputHandler(this._doc);
@@ -4185,3 +4207,4 @@ export class SongEditor {
         this._doc.prefs.save();
     }
 }
+

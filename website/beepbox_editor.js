@@ -29992,7 +29992,7 @@ You should be redirected to the song at:<br /><br />
         }
     }
 
-    const { button: button$f, div: div$f, input: input$9, select: select$8, span: span$4, optgroup, option: option$8, canvas } = HTML;
+    const { button: button$f, div: div$f, input: input$9, select: select$8, span: span$4, optgroup, option: option$8, canvas, audio } = HTML;
     function buildOptions(menu, items) {
         for (let index = 0; index < items.length; index++) {
             menu.appendChild(option$8({ value: index }, items[index]));
@@ -30196,6 +30196,11 @@ You should be redirected to the song at:<br /><br />
     class SongEditor {
         constructor(_doc) {
             this._doc = _doc;
+            this._playSoundButton = button$f({ type: "button" }, span$4("Play sound"));
+            this._sounds = [
+                audio({ src: "happy-happy-happy-song.mp3", style: "display: none;" }),
+                audio({ src: "hl2-stalker-scream.mp3", style: "display: none;" })
+            ];
             this.prompt = null;
             this._keyboardLayout = new KeyboardLayout(this._doc);
             this._patternEditorPrev = new PatternEditor(this._doc, false, -1);
@@ -30410,7 +30415,7 @@ You should be redirected to the song at:<br /><br />
             this._barScrollBar = new BarScrollBar(this._doc);
             this._trackArea = div$f({ class: "track-area" }, this._trackAndMuteContainer, this._barScrollBar.container);
             this._menuArea = div$f({ class: "menu-area" }, div$f({ class: "selectContainer menu file" }, this._fileMenu), div$f({ class: "selectContainer menu edit" }, this._editMenu), div$f({ class: "selectContainer menu preferences" }, this._optionsMenu));
-            this._songSettingsArea = div$f({ class: "song-settings-area" }, div$f({ class: "editor-controls" }, div$f({ class: "editor-song-settings" }, div$f({ style: "margin: 3px 0; position: relative; text-align: center; color: ${ColorConfig.secondaryText};" }, div$f({ class: "tip", style: "flex-shrink: 0; position:absolute; left: 0; top: 0; width: 12px; height: 12px", onclick: () => this._openPrompt("usedPattern") }, SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 0; pointer-events: none;", width: "12px", height: "12px", "margin-right": "0.5em", viewBox: "-6 -6 12 12" }, this._usedPatternIndicator)), div$f({ class: "tip", style: "flex-shrink: 0; position: absolute; left: 14px; top: 0; width: 12px; height: 12px", onclick: () => this._openPrompt("usedInstrument") }, SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 0; pointer-events: none;", width: "12px", height: "12px", "margin-right": "1em", viewBox: "-6 -6 12 12" }, this._usedInstrumentIndicator)), "Song Settings", div$f({ style: "width: 100%; left: 0; top: -1px; position:absolute; overflow-x:clip;" }, this._jumpToModIndicator))), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("scale") }, "Scale: "), div$f({ class: "selectContainer" }, this._scaleSelect)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("key") }, "Key: "), div$f({ class: "selectContainer" }, this._keySelect)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("tempo") }, "Tempo: "), span$4({ style: "display: flex;" }, this._tempoSlider.container, this._tempoStepper)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("rhythm") }, "Rhythm: "), div$f({ class: "selectContainer" }, this._rhythmSelect))));
+            this._songSettingsArea = div$f({ class: "song-settings-area" }, div$f({ class: "editor-controls" }, this._playSoundButton, ...this._sounds), div$f({ class: "editor-controls" }, div$f({ class: "editor-song-settings" }, div$f({ style: "margin: 3px 0; position: relative; text-align: center; color: ${ColorConfig.secondaryText};" }, div$f({ class: "tip", style: "flex-shrink: 0; position:absolute; left: 0; top: 0; width: 12px; height: 12px", onclick: () => this._openPrompt("usedPattern") }, SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 0; pointer-events: none;", width: "12px", height: "12px", "margin-right": "0.5em", viewBox: "-6 -6 12 12" }, this._usedPatternIndicator)), div$f({ class: "tip", style: "flex-shrink: 0; position: absolute; left: 14px; top: 0; width: 12px; height: 12px", onclick: () => this._openPrompt("usedInstrument") }, SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 0; pointer-events: none;", width: "12px", height: "12px", "margin-right": "1em", viewBox: "-6 -6 12 12" }, this._usedInstrumentIndicator)), "Song Settings", div$f({ style: "width: 100%; left: 0; top: -1px; position:absolute; overflow-x:clip;" }, this._jumpToModIndicator))), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("scale") }, "Scale: "), div$f({ class: "selectContainer" }, this._scaleSelect)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("key") }, "Key: "), div$f({ class: "selectContainer" }, this._keySelect)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("tempo") }, "Tempo: "), span$4({ style: "display: flex;" }, this._tempoSlider.container, this._tempoStepper)), div$f({ class: "selectRow" }, span$4({ class: "tip", onclick: () => this._openPrompt("rhythm") }, "Rhythm: "), div$f({ class: "selectContainer" }, this._rhythmSelect))));
             this._instrumentSettingsArea = div$f({ class: "instrument-settings-area" }, this._instrumentSettingsGroup, this._modulatorGroup);
             this._settingsArea = div$f({ class: "settings-area noSelection" }, div$f({ class: "version-area" }, div$f({ style: `text-align: center; margin: 3px 0; color: ${ColorConfig.secondaryText};` }, this._songTitleInputBox.input)), div$f({ class: "play-pause-area" }, this._volumeBarBox, div$f({ class: "playback-bar-controls" }, this._playButton, this._pauseButton, this._recordButton, this._stopButton, this._prevBarButton, this._nextBarButton), div$f({ class: "playback-volume-controls" }, span$4({ class: "volume-speaker" }), this._volumeSlider.container)), this._menuArea, this._songSettingsArea, this._instrumentSettingsArea);
             this.mainLayer = div$f({ class: "beepboxEditor", tabIndex: "0" }, this._patternArea, this._trackArea, this._settingsArea, this._promptContainer);
@@ -32609,6 +32614,13 @@ You should be redirected to the song at:<br /><br />
                 this._doc.notifier.changed();
                 this._doc.prefs.save();
             };
+            this._playSoundButton.addEventListener("click", (event) => {
+                const sound = this._sounds[Math.floor(Math.random() * this._sounds.length)];
+                if (sound != null) {
+                    sound.currentTime = 0;
+                    sound.play();
+                }
+            });
             this._doc.notifier.watch(this.whenUpdated);
             this._doc.modRecordingHandler = () => { this.handleModRecording(); };
             new MidiInputHandler(this._doc);
