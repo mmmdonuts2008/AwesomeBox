@@ -4542,7 +4542,7 @@ var beepbox = (function (exports) {
             return null;
         }
     }
-    EditorConfig.version = "0.1-b";
+    EditorConfig.version = "0.1.4-b";
     EditorConfig.versionDisplayName = "AwesomeBox " + EditorConfig.version;
     EditorConfig.releaseNotesURL = "https://jummbus.bitbucket.io/patch_notes/" + EditorConfig.version + ".html";
     EditorConfig.isOnMac = /^Mac/i.test(navigator.platform) || /Mac OS X/i.test(navigator.userAgent) || /^(iPhone|iPad|iPod)/i.test(navigator.platform) || /(iPhone|iPad|iPod)/i.test(navigator.userAgent);
