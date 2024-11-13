@@ -37,7 +37,7 @@ export class EditorConfig {
         // The order of this array needs to line up with the order of the InstrumentType declarations in SynthConfig.ts. (changes.ts' random instrument generation relies on this, for one.)
             name: "Custom Instruments", presets: <DictionaryArray<Preset>>toNameMap([
                 { name: "chip wave", customType: InstrumentType.chip },
-                { name: "chip wave times 2", customType: InstrumentType.chip2 },
+                { name: "chip wave times 2", customType: InstrumentType.chip },
                 { name: "FM (expert)", customType: InstrumentType.fm },
                 { name: "basic noise", customType: InstrumentType.noise },
                 { name: "spectrum", customType: InstrumentType.spectrum },

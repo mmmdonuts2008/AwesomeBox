@@ -56,7 +56,6 @@ export const enum EnvelopeType {
 
 export const enum InstrumentType {
     chip,
-    chip2,
     fm,
     noise,
     spectrum,

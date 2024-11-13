@@ -359,21 +359,21 @@ var beepbox = (function (exports) {
     Config.instrumentAutomationTargets = toNameMap([
         { name: "none", computeIndex: null, displayName: "none", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: null },
         { name: "noteVolume", computeIndex: 0, displayName: "note volume", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: null },
-        { name: "pulseWidth", computeIndex: 2, displayName: "pulse width", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [7, 9] },
-        { name: "stringSustain", computeIndex: 3, displayName: "sustain", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [8] },
-        { name: "unison", computeIndex: 4, displayName: "unison", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [0, 6, 8] },
-        { name: "operatorFrequency", computeIndex: 5, displayName: "fm# freq", interleave: true, isFilter: false, maxCount: Config.operatorCount, effect: null, compatibleInstruments: [2] },
-        { name: "operatorAmplitude", computeIndex: 9, displayName: "fm# volume", interleave: false, isFilter: false, maxCount: Config.operatorCount, effect: null, compatibleInstruments: [2] },
-        { name: "feedbackAmplitude", computeIndex: 13, displayName: "fm feedback", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [2] },
+        { name: "pulseWidth", computeIndex: 2, displayName: "pulse width", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [6, 8] },
+        { name: "stringSustain", computeIndex: 3, displayName: "sustain", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [7] },
+        { name: "unison", computeIndex: 4, displayName: "unison", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [0, 5, 7] },
+        { name: "operatorFrequency", computeIndex: 5, displayName: "fm# freq", interleave: true, isFilter: false, maxCount: Config.operatorCount, effect: null, compatibleInstruments: [1] },
+        { name: "operatorAmplitude", computeIndex: 9, displayName: "fm# volume", interleave: false, isFilter: false, maxCount: Config.operatorCount, effect: null, compatibleInstruments: [1] },
+        { name: "feedbackAmplitude", computeIndex: 13, displayName: "fm feedback", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [1] },
         { name: "pitchShift", computeIndex: 14, displayName: "pitch shift", interleave: false, isFilter: false, maxCount: 1, effect: 7, compatibleInstruments: null },
         { name: "detune", computeIndex: 15, displayName: "detune", interleave: false, isFilter: false, maxCount: 1, effect: 8, compatibleInstruments: null },
         { name: "vibratoDepth", computeIndex: 16, displayName: "vibrato range", interleave: false, isFilter: false, maxCount: 1, effect: 9, compatibleInstruments: null },
         { name: "noteFilterAllFreqs", computeIndex: 1, displayName: "n. filter freqs", interleave: false, isFilter: true, maxCount: 1, effect: 5, compatibleInstruments: null },
         { name: "noteFilterFreq", computeIndex: 17, displayName: "n. filter # freq", interleave: false, isFilter: true, maxCount: Config.filterMaxPoints, effect: 5, compatibleInstruments: null },
         { name: "noteFilterGain", computeIndex: null, displayName: "n. filter # vol", interleave: false, isFilter: true, maxCount: Config.filterMaxPoints, effect: 5, compatibleInstruments: null },
-        { name: "supersawDynamism", computeIndex: 33, displayName: "dynamism", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [9] },
-        { name: "supersawSpread", computeIndex: 34, displayName: "spread", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [9] },
-        { name: "supersawShape", computeIndex: 35, displayName: "saw↔pulse", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [9] },
+        { name: "supersawDynamism", computeIndex: 33, displayName: "dynamism", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [8] },
+        { name: "supersawSpread", computeIndex: 34, displayName: "spread", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [8] },
+        { name: "supersawShape", computeIndex: 35, displayName: "saw↔pulse", interleave: false, isFilter: false, maxCount: 1, effect: null, compatibleInstruments: [8] },
     ]);
     Config.operatorWaves = toNameMap([
         { name: "sine", samples: Config.sineWave },
@@ -798,16 +798,16 @@ var beepbox = (function (exports) {
         {
             name: "Custom Instruments", presets: toNameMap([
                 { name: "chip wave", customType: 0 },
-                { name: "chip wave times 2", customType: 1 },
-                { name: "FM (expert)", customType: 2 },
-                { name: "basic noise", customType: 3 },
-                { name: "spectrum", customType: 4 },
-                { name: "drumset", customType: 5 },
-                { name: "harmonics", customType: 6 },
-                { name: "pulse width", customType: 7 },
-                { name: "picked string", customType: 8 },
-                { name: "supersaw", customType: 9 },
-                { name: "custom chip", customType: 10 },
+                { name: "chip wave times 2", customType: 0 },
+                { name: "FM (expert)", customType: 1 },
+                { name: "basic noise", customType: 2 },
+                { name: "spectrum", customType: 3 },
+                { name: "drumset", customType: 4 },
+                { name: "harmonics", customType: 5 },
+                { name: "pulse width", customType: 6 },
+                { name: "picked string", customType: 7 },
+                { name: "supersaw", customType: 8 },
+                { name: "custom chip", customType: 9 },
             ])
         },
         {
@@ -7584,7 +7584,7 @@ li.select2-results__option[role=group] > strong:hover {
                 return this.wave;
             this._hash = settings.hash;
             this._generatedForType = instrumentType;
-            const harmonicsRendered = (instrumentType == 8) ? Config.harmonicsRenderedForPickedString : Config.harmonicsRendered;
+            const harmonicsRendered = (instrumentType == 7) ? Config.harmonicsRenderedForPickedString : Config.harmonicsRendered;
             const waveLength = Config.harmonicsWavelength;
             const retroWave = getDrumWave(0, null, null);
             if (this.wave == null || this.wave.length != waveLength + 1) {
@@ -8044,7 +8044,7 @@ li.select2-results__option[role=group] > strong:hover {
         }
         setTypeAndReset(type, isNoiseChannel, isModChannel) {
             if (isModChannel)
-                type = 11;
+                type = 10;
             this.type = type;
             this.preset = type;
             this.volume = 0;
@@ -8091,7 +8091,7 @@ li.select2-results__option[role=group] > strong:hover {
                     this.chipWave = 2;
                     this.chord = Config.chords.dictionary["arpeggio"].index;
                     break;
-                case 10:
+                case 9:
                     this.chipWave = 2;
                     this.chord = Config.chords.dictionary["arpeggio"].index;
                     for (let i = 0; i < 64; i++) {
@@ -8111,7 +8111,7 @@ li.select2-results__option[role=group] > strong:hover {
                     }
                     this.customChipWaveIntegral[64] = 0.0;
                     break;
-                case 2:
+                case 1:
                     this.chord = Config.chords.dictionary["custom interval"].index;
                     this.algorithm = 0;
                     this.feedbackType = 0;
@@ -8120,15 +8120,15 @@ li.select2-results__option[role=group] > strong:hover {
                         this.operators[i].reset(i);
                     }
                     break;
-                case 3:
+                case 2:
                     this.chipNoise = 1;
                     this.chord = Config.chords.dictionary["arpeggio"].index;
                     break;
-                case 4:
+                case 3:
                     this.chord = Config.chords.dictionary["simultaneous"].index;
                     this.spectrumWave.reset(isNoiseChannel);
                     break;
-                case 5:
+                case 4:
                     this.chord = Config.chords.dictionary["simultaneous"].index;
                     for (let i = 0; i < Config.drumCount; i++) {
                         this.drumsetEnvelopes[i] = Config.envelopes.dictionary["twang 2"].index;
@@ -8138,19 +8138,19 @@ li.select2-results__option[role=group] > strong:hover {
                         this.drumsetSpectrumWaves[i].reset(isNoiseChannel);
                     }
                     break;
-                case 6:
+                case 5:
                     this.chord = Config.chords.dictionary["simultaneous"].index;
                     this.harmonicsWave.reset();
                     break;
-                case 7:
+                case 6:
                     this.chord = Config.chords.dictionary["arpeggio"].index;
                     this.pulseWidth = Config.pulseWidthRange;
                     break;
-                case 8:
+                case 7:
                     this.chord = Config.chords.dictionary["strum"].index;
                     this.harmonicsWave.reset();
                     break;
-                case 11:
+                case 10:
                     this.transition = 0;
                     this.vibrato = 0;
                     this.interval = 0;
@@ -8167,7 +8167,7 @@ li.select2-results__option[role=group] > strong:hover {
                         this.modFilterTypes[mod] = 0;
                     }
                     break;
-                case 9:
+                case 8:
                     this.chord = Config.chords.dictionary["arpeggio"].index;
                     this.supersawDynamism = Config.supersawDynamismMax;
                     this.supersawSpread = Math.ceil(Config.supersawSpreadMax / 2.0);
@@ -8195,9 +8195,9 @@ li.select2-results__option[role=group] > strong:hover {
             if (legacyFilterEnv == undefined)
                 legacyFilterEnv = Config.envelopes.dictionary["none"];
             if (legacyPulseEnv == undefined)
-                legacyPulseEnv = Config.envelopes.dictionary[(this.type == 7) ? "twang 2" : "none"];
+                legacyPulseEnv = Config.envelopes.dictionary[(this.type == 6) ? "twang 2" : "none"];
             if (legacyOperatorEnvelopes == undefined)
-                legacyOperatorEnvelopes = [Config.envelopes.dictionary[(this.type == 2) ? "note size" : "none"], Config.envelopes.dictionary["none"], Config.envelopes.dictionary["none"], Config.envelopes.dictionary["none"]];
+                legacyOperatorEnvelopes = [Config.envelopes.dictionary[(this.type == 1) ? "note size" : "none"], Config.envelopes.dictionary["none"], Config.envelopes.dictionary["none"], Config.envelopes.dictionary["none"]];
             if (legacyFeedbackEnv == undefined)
                 legacyFeedbackEnv = Config.envelopes.dictionary["none"];
             const legacyFilterCutoffRange = 11;
@@ -8208,7 +8208,7 @@ li.select2-results__option[role=group] > strong:hover {
             let noCarriersControlledByNoteSize = true;
             let allCarriersControlledByNoteSize = true;
             let noteSizeControlsSomethingElse = (legacyFilterEnv.type == 0) || (legacyPulseEnv.type == 0);
-            if (this.type == 2) {
+            if (this.type == 1) {
                 noteSizeControlsSomethingElse = noteSizeControlsSomethingElse || (legacyFeedbackEnv.type == 0);
                 for (let i = 0; i < legacyOperatorEnvelopes.length; i++) {
                     if (i < carrierCount) {
@@ -8225,7 +8225,7 @@ li.select2-results__option[role=group] > strong:hover {
                 }
             }
             this.envelopeCount = 0;
-            if (this.type == 2) {
+            if (this.type == 1) {
                 if (allCarriersControlledByNoteSize && noteSizeControlsSomethingElse) {
                     this.addEnvelope(Config.instrumentAutomationTargets.dictionary["noteVolume"].index, 0, Config.envelopes.dictionary["note size"].index);
                 }
@@ -8358,26 +8358,26 @@ li.select2-results__option[role=group] > strong:hover {
             if (effectsIncludeReverb(this.effects)) {
                 instrumentObject["reverb"] = Math.round(100 * this.reverb / (Config.reverbRange - 1));
             }
-            if (this.type != 5) {
+            if (this.type != 4) {
                 instrumentObject["fadeInSeconds"] = Math.round(10000 * Synth.fadeInSettingToSeconds(this.fadeIn)) / 10000;
                 instrumentObject["fadeOutTicks"] = Synth.fadeOutSettingToTicks(this.fadeOut);
             }
-            if (this.type == 6 || this.type == 8) {
+            if (this.type == 5 || this.type == 7) {
                 instrumentObject["harmonics"] = [];
                 for (let i = 0; i < Config.harmonicsControlPoints; i++) {
                     instrumentObject["harmonics"][i] = Math.round(100 * this.harmonicsWave.harmonics[i] / Config.harmonicsMax);
                 }
             }
-            if (this.type == 3) {
+            if (this.type == 2) {
                 instrumentObject["wave"] = Config.chipNoises[this.chipNoise].name;
             }
-            else if (this.type == 4) {
+            else if (this.type == 3) {
                 instrumentObject["spectrum"] = [];
                 for (let i = 0; i < Config.spectrumControlPoints; i++) {
                     instrumentObject["spectrum"][i] = Math.round(100 * this.spectrumWave.spectrum[i] / Config.spectrumMax);
                 }
             }
-            else if (this.type == 5) {
+            else if (this.type == 4) {
                 instrumentObject["drums"] = [];
                 for (let j = 0; j < Config.drumCount; j++) {
                     const spectrum = [];
@@ -8394,26 +8394,26 @@ li.select2-results__option[role=group] > strong:hover {
                 instrumentObject["wave"] = Config.chipWaves[this.chipWave].name;
                 instrumentObject["unison"] = Config.unisons[this.unison].name;
             }
-            else if (this.type == 7) {
+            else if (this.type == 6) {
                 instrumentObject["pulseWidth"] = this.pulseWidth;
             }
-            else if (this.type == 9) {
+            else if (this.type == 8) {
                 instrumentObject["pulseWidth"] = this.pulseWidth;
                 instrumentObject["dynamism"] = Math.round(100 * this.supersawDynamism / Config.supersawDynamismMax);
                 instrumentObject["spread"] = Math.round(100 * this.supersawSpread / Config.supersawSpreadMax);
                 instrumentObject["shape"] = Math.round(100 * this.supersawShape / Config.supersawShapeMax);
             }
-            else if (this.type == 8) {
+            else if (this.type == 7) {
                 instrumentObject["unison"] = Config.unisons[this.unison].name;
                 instrumentObject["stringSustain"] = Math.round(100 * this.stringSustain / (Config.stringSustainRange - 1));
                 if (Config.enableAcousticSustain) {
                     instrumentObject["stringSustainType"] = Config.sustainTypeNames[this.stringSustainType];
                 }
             }
-            else if (this.type == 6) {
+            else if (this.type == 5) {
                 instrumentObject["unison"] = Config.unisons[this.unison].name;
             }
-            else if (this.type == 2) {
+            else if (this.type == 1) {
                 const operatorArray = [];
                 for (const operator of this.operators) {
                     operatorArray.push({
@@ -8428,7 +8428,7 @@ li.select2-results__option[role=group] > strong:hover {
                 instrumentObject["feedbackAmplitude"] = this.feedbackAmplitude;
                 instrumentObject["operators"] = operatorArray;
             }
-            else if (this.type == 10) {
+            else if (this.type == 9) {
                 instrumentObject["wave"] = Config.chipWaves[this.chipWave].name;
                 instrumentObject["unison"] = Config.unisons[this.unison].name;
                 instrumentObject["customChipWave"] = new Float64Array(64);
@@ -8437,7 +8437,7 @@ li.select2-results__option[role=group] > strong:hover {
                     instrumentObject["customChipWave"][i] = this.customChipWave[i];
                 }
             }
-            else if (this.type == 11) {
+            else if (this.type == 10) {
                 instrumentObject["modChannels"] = [];
                 instrumentObject["modInstruments"] = [];
                 instrumentObject["modSettings"] = [];
@@ -8464,7 +8464,7 @@ li.select2-results__option[role=group] > strong:hover {
                 instrumentObject = {};
             let type = Config.instrumentTypeNames.indexOf(instrumentObject["type"]);
             if (type == -1)
-                type = isModChannel ? 11 : (isNoiseChannel ? 3 : 0);
+                type = isModChannel ? 10 : (isNoiseChannel ? 2 : 0);
             this.setTypeAndReset(type, isNoiseChannel, isModChannel);
             this.effects &= ~(1 << 2);
             if (instrumentObject["preset"] != undefined) {
@@ -8499,7 +8499,7 @@ li.select2-results__option[role=group] > strong:hover {
                 const legacyEffectsNames = ["none", "reverb", "chorus", "chorus & reverb"];
                 this.effects = legacyEffectsNames.indexOf(instrumentObject["effects"]);
                 if (this.effects == -1)
-                    this.effects = (this.type == 3) ? 0 : 1;
+                    this.effects = (this.type == 2) ? 0 : 1;
             }
             this.transition = Config.transitions.dictionary["normal"].index;
             const transitionProperty = instrumentObject["transition"] || instrumentObject["envelope"];
@@ -8545,16 +8545,16 @@ li.select2-results__option[role=group] > strong:hover {
                     this.chord = chord.index;
                 }
                 else {
-                    if (this.type == 3) {
+                    if (this.type == 2) {
                         this.chord = Config.chords.dictionary["arpeggio"].index;
                     }
-                    else if (this.type == 8) {
+                    else if (this.type == 7) {
                         this.chord = Config.chords.dictionary["strum"].index;
                     }
                     else if (this.type == 0) {
                         this.chord = Config.chords.dictionary["arpeggio"].index;
                     }
-                    else if (this.type == 2) {
+                    else if (this.type == 1) {
                         this.chord = Config.chords.dictionary["custom interval"].index;
                     }
                     else {
@@ -8704,14 +8704,14 @@ li.select2-results__option[role=group] > strong:hover {
             this.stringSustainType = Config.enableAcousticSustain ? Config.sustainTypeNames.indexOf(instrumentObject["stringSustainType"]) : 0;
             if (this.stringSustainType == -1)
                 this.stringSustainType = 0;
-            if (this.type == 3) {
+            if (this.type == 2) {
                 this.chipNoise = Config.chipNoises.findIndex(wave => wave.name == instrumentObject["wave"]);
                 if (this.chipNoise == -1)
                     this.chipNoise = 1;
             }
             const legacyEnvelopeNames = { "custom": "note size", "steady": "none", "pluck 1": "twang 1", "pluck 2": "twang 2", "pluck 3": "twang 3" };
             const getEnvelope = (name) => (legacyEnvelopeNames[name] != undefined) ? Config.envelopes.dictionary[legacyEnvelopeNames[name]] : Config.envelopes.dictionary[name];
-            if (this.type == 5) {
+            if (this.type == 4) {
                 if (instrumentObject["drums"] != undefined) {
                     for (let j = 0; j < Config.drumCount; j++) {
                         const drum = instrumentObject["drums"][j];
@@ -8737,7 +8737,7 @@ li.select2-results__option[role=group] > strong:hover {
                 if (this.chipWave == -1)
                     this.chipWave = 1;
             }
-            if (this.type == 2) {
+            if (this.type == 1) {
                 this.algorithm = Config.algorithms.findIndex(algorithm => algorithm.name == instrumentObject["algorithm"]);
                 if (this.algorithm == -1)
                     this.algorithm = 0;
@@ -8789,7 +8789,7 @@ li.select2-results__option[role=group] > strong:hover {
                     }
                 }
             }
-            else if (this.type == 10) {
+            else if (this.type == 9) {
                 if (instrumentObject["customChipWave"]) {
                     for (let i = 0; i < 64; i++) {
                         this.customChipWave[i] = instrumentObject["customChipWave"][i];
@@ -8809,7 +8809,7 @@ li.select2-results__option[role=group] > strong:hover {
                     this.customChipWaveIntegral[64] = 0.0;
                 }
             }
-            else if (this.type == 11) {
+            else if (this.type == 10) {
                 if (instrumentObject["modChannels"] != undefined) {
                     for (let mod = 0; mod < Config.modCount; mod++) {
                         this.modChannels[mod] = instrumentObject["modChannels"][mod];
@@ -8820,7 +8820,7 @@ li.select2-results__option[role=group] > strong:hover {
                     }
                 }
             }
-            if (this.type != 11) {
+            if (this.type != 10) {
                 if (this.chord == Config.chords.dictionary["arpeggio"].index && instrumentObject["arpeggioSpeed"] != undefined) {
                     this.arpeggioSpeed = instrumentObject["arpeggioSpeed"];
                 }
@@ -9011,19 +9011,19 @@ li.select2-results__option[role=group] > strong:hover {
         }
         getTransition() {
             return effectsIncludeTransition(this.effects) ? Config.transitions[this.transition] :
-                (this.type == 11 ? Config.transitions.dictionary["interrupt"] : Config.transitions.dictionary["normal"]);
+                (this.type == 10 ? Config.transitions.dictionary["interrupt"] : Config.transitions.dictionary["normal"]);
         }
         getFadeInSeconds() {
-            return (this.type == 5) ? 0.0 : Synth.fadeInSettingToSeconds(this.fadeIn);
+            return (this.type == 4) ? 0.0 : Synth.fadeInSettingToSeconds(this.fadeIn);
         }
         getFadeOutTicks() {
-            return (this.type == 5) ? Config.drumsetFadeOutTicks : Synth.fadeOutSettingToTicks(this.fadeOut);
+            return (this.type == 4) ? Config.drumsetFadeOutTicks : Synth.fadeOutSettingToTicks(this.fadeOut);
         }
         getChord() {
             return effectsIncludeChord(this.effects) ? Config.chords[this.chord] : Config.chords.dictionary["simultaneous"];
         }
         getDrumsetEnvelope(pitch) {
-            if (this.type != 5)
+            if (this.type != 4)
                 throw new Error("Can't getDrumsetEnvelope() for non-drumset.");
             return Config.envelopes[this.drumsetEnvelopes[pitch]];
         }
@@ -9178,7 +9178,7 @@ li.select2-results__option[role=group] > strong:hover {
                         if (channel.instruments.length <= instrument) {
                             channel.instruments[instrument] = new Instrument(isNoiseChannel, isModChannel);
                         }
-                        channel.instruments[instrument].setTypeAndReset(isModChannel ? 11 : (isNoiseChannel ? 3 : 0), isNoiseChannel, isModChannel);
+                        channel.instruments[instrument].setTypeAndReset(isModChannel ? 10 : (isNoiseChannel ? 2 : 0), isNoiseChannel, isModChannel);
                     }
                     channel.instruments.length = Config.instrumentCountMin;
                     for (let bar = 0; bar < this.barCount; bar++) {
@@ -9360,11 +9360,11 @@ li.select2-results__option[role=group] > strong:hover {
                     if (effectsIncludeReverb(instrument.effects)) {
                         buffer.push(base64IntToCharCode[instrument.reverb]);
                     }
-                    if (instrument.type != 5) {
+                    if (instrument.type != 4) {
                         buffer.push(100, base64IntToCharCode[instrument.fadeIn], base64IntToCharCode[instrument.fadeOut]);
                         buffer.push(base64IntToCharCode[+instrument.clicklessTransition]);
                     }
-                    if (instrument.type == 6 || instrument.type == 8) {
+                    if (instrument.type == 5 || instrument.type == 7) {
                         buffer.push(72);
                         const harmonicsBits = new BitFieldWriter();
                         for (let i = 0; i < Config.harmonicsControlPoints; i++) {
@@ -9376,7 +9376,7 @@ li.select2-results__option[role=group] > strong:hover {
                         buffer.push(119, base64IntToCharCode[instrument.chipWave]);
                         buffer.push(104, base64IntToCharCode[instrument.unison]);
                     }
-                    else if (instrument.type == 2) {
+                    else if (instrument.type == 1) {
                         buffer.push(65, base64IntToCharCode[instrument.algorithm]);
                         buffer.push(70, base64IntToCharCode[instrument.feedbackType]);
                         buffer.push(66, base64IntToCharCode[instrument.feedbackAmplitude]);
@@ -9396,7 +9396,7 @@ li.select2-results__option[role=group] > strong:hover {
                             }
                         }
                     }
-                    else if (instrument.type == 10) {
+                    else if (instrument.type == 9) {
                         buffer.push(119, base64IntToCharCode[instrument.chipWave]);
                         buffer.push(104, base64IntToCharCode[instrument.unison]);
                         buffer.push(77);
@@ -9404,10 +9404,10 @@ li.select2-results__option[role=group] > strong:hover {
                             buffer.push(base64IntToCharCode[(instrument.customChipWave[j] + 24)]);
                         }
                     }
-                    else if (instrument.type == 3) {
+                    else if (instrument.type == 2) {
                         buffer.push(119, base64IntToCharCode[instrument.chipNoise]);
                     }
-                    else if (instrument.type == 4) {
+                    else if (instrument.type == 3) {
                         buffer.push(83);
                         const spectrumBits = new BitFieldWriter();
                         for (let i = 0; i < Config.spectrumControlPoints; i++) {
@@ -9415,7 +9415,7 @@ li.select2-results__option[role=group] > strong:hover {
                         }
                         spectrumBits.encodeBase64(buffer);
                     }
-                    else if (instrument.type == 5) {
+                    else if (instrument.type == 4) {
                         buffer.push(122);
                         for (let j = 0; j < Config.drumCount; j++) {
                             buffer.push(base64IntToCharCode[instrument.drumsetEnvelopes[j]]);
@@ -9429,24 +9429,24 @@ li.select2-results__option[role=group] > strong:hover {
                         }
                         spectrumBits.encodeBase64(buffer);
                     }
-                    else if (instrument.type == 6) {
+                    else if (instrument.type == 5) {
                         buffer.push(104, base64IntToCharCode[instrument.unison]);
                     }
-                    else if (instrument.type == 7) {
-                        buffer.push(87, base64IntToCharCode[instrument.pulseWidth]);
-                    }
-                    else if (instrument.type == 9) {
-                        buffer.push(120, base64IntToCharCode[instrument.supersawDynamism], base64IntToCharCode[instrument.supersawSpread], base64IntToCharCode[instrument.supersawShape]);
+                    else if (instrument.type == 6) {
                         buffer.push(87, base64IntToCharCode[instrument.pulseWidth]);
                     }
                     else if (instrument.type == 8) {
+                        buffer.push(120, base64IntToCharCode[instrument.supersawDynamism], base64IntToCharCode[instrument.supersawSpread], base64IntToCharCode[instrument.supersawShape]);
+                        buffer.push(87, base64IntToCharCode[instrument.pulseWidth]);
+                    }
+                    else if (instrument.type == 7) {
                         if (Config.stringSustainRange > 0x20 || 2 > 2) {
                             throw new Error("Not enough bits to represent sustain value and type in same base64 character.");
                         }
                         buffer.push(104, base64IntToCharCode[instrument.unison]);
                         buffer.push(73, base64IntToCharCode[instrument.stringSustain | (instrument.stringSustainType << 5)]);
                     }
-                    else if (instrument.type == 11) ;
+                    else if (instrument.type == 10) ;
                     else {
                         throw new Error("Unknown instrument type.");
                     }
@@ -9897,7 +9897,7 @@ li.select2-results__option[role=group] > strong:hover {
                                     this.channels[channelIndex].instruments.length = instrumentsPerChannel;
                                     if (beforeSix && fromBeepBox) {
                                         for (let instrumentIndex = 0; instrumentIndex < instrumentsPerChannel; instrumentIndex++) {
-                                            this.channels[channelIndex].instruments[instrumentIndex].setTypeAndReset(isNoiseChannel ? 3 : 0, isNoiseChannel, isModChannel);
+                                            this.channels[channelIndex].instruments[instrumentIndex].setTypeAndReset(isNoiseChannel ? 2 : 0, isNoiseChannel, isModChannel);
                                         }
                                     }
                                     for (let j = legacySettingsCache[channelIndex].length; j < instrumentsPerChannel; j++) {
@@ -9972,19 +9972,19 @@ li.select2-results__option[role=group] > strong:hover {
                             }
                             validateRange(0, this.channels.length - 1, instrumentChannelIterator);
                             const instrument = this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator];
-                            let instrumentType = validateRange(0, 12 - 1, base64CharCodeToInt[compressed.charCodeAt(charIndex++)]);
+                            let instrumentType = validateRange(0, 11 - 1, base64CharCodeToInt[compressed.charCodeAt(charIndex++)]);
                             if (fromJummBox && beforeFive) {
-                                if (instrumentType == 8 || instrumentType == 9) {
+                                if (instrumentType == 7 || instrumentType == 8) {
                                     instrumentType += 2;
                                 }
                             }
                             else if (fromJummBox && beforeSix) {
-                                if (instrumentType == 9 || instrumentType == 10) {
+                                if (instrumentType == 8 || instrumentType == 9) {
                                     instrumentType += 1;
                                 }
                             }
                             instrument.setTypeAndReset(instrumentType, instrumentChannelIterator >= this.pitchChannelCount && instrumentChannelIterator < this.pitchChannelCount + this.noiseChannelCount, instrumentChannelIterator >= this.pitchChannelCount + this.noiseChannelCount);
-                            if (((beforeSeven && fromBeepBox) || (beforeTwo && fromJummBox)) && (instrumentType == 0 || instrumentType == 10 || instrumentType == 7)) {
+                            if (((beforeSeven && fromBeepBox) || (beforeTwo && fromJummBox)) && (instrumentType == 0 || instrumentType == 9 || instrumentType == 6)) {
                                 instrument.aliases = true;
                                 instrument.distortion = 0;
                                 instrument.effects |= 1 << 3;
@@ -10008,15 +10008,15 @@ li.select2-results__option[role=group] > strong:hover {
                             const presetValue = (base64CharCodeToInt[compressed.charCodeAt(charIndex++)] << 6) | (base64CharCodeToInt[compressed.charCodeAt(charIndex++)]);
                             this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset = presetValue;
                             if (fromJummBox && beforeFive) {
-                                if (this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset == 8) {
-                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset = 10;
-                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].type = 10;
+                                if (this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset == 7) {
+                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset = 9;
+                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].type = 9;
                                 }
                             }
                             else if (fromJummBox && beforeSix) {
-                                if (this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset == 9) {
-                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset = 10;
-                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].type = 10;
+                                if (this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset == 8) {
+                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].preset = 9;
+                                    this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator].type = 9;
                                 }
                             }
                             if (fromBeepBox && presetValue == EditorConfig.nameToPresetValue("grand piano 1")) {
@@ -10188,7 +10188,7 @@ li.select2-results__option[role=group] > strong:hover {
                         {
                             const instrument = this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator];
                             if ((beforeNine && fromBeepBox) || (beforeFive && fromJummBox)) {
-                                if (instrument.type == 5) {
+                                if (instrument.type == 4) {
                                     for (let i = 0; i < Config.drumCount; i++) {
                                         instrument.drumsetEnvelopes[i] = Song._envelopeFromLegacyIndex(base64CharCodeToInt[compressed.charCodeAt(charIndex++)]).index;
                                     }
@@ -10799,7 +10799,7 @@ li.select2-results__option[role=group] > strong:hover {
                     case 83:
                         {
                             const instrument = this.channels[instrumentChannelIterator].instruments[instrumentIndexIterator];
-                            if (instrument.type == 4) {
+                            if (instrument.type == 3) {
                                 const byteCount = Math.ceil(Config.spectrumControlPoints * Config.spectrumControlPointBits / 6);
                                 const bits = new BitFieldReader(compressed, charIndex, charIndex + byteCount);
                                 for (let i = 0; i < Config.spectrumControlPoints; i++) {
@@ -10808,7 +10808,7 @@ li.select2-results__option[role=group] > strong:hover {
                                 instrument.spectrumWave.markCustomWaveDirty();
                                 charIndex += byteCount;
                             }
-                            else if (instrument.type == 5) {
+                            else if (instrument.type == 4) {
                                 const byteCount = Math.ceil(Config.drumCount * Config.spectrumControlPoints * Config.spectrumControlPointBits / 6);
                                 const bits = new BitFieldReader(compressed, charIndex, charIndex + byteCount);
                                 for (let j = 0; j < Config.drumCount; j++) {
@@ -12638,23 +12638,23 @@ li.select2-results__option[role=group] > strong:hover {
             if (instrument.type == 0) {
                 this.wave = (this.aliases) ? Config.rawChipWaves[instrument.chipWave].samples : Config.chipWaves[instrument.chipWave].samples;
             }
-            else if (instrument.type == 10) {
+            else if (instrument.type == 9) {
                 this.wave = (this.aliases) ? instrument.customChipWave : instrument.customChipWaveIntegral;
                 this.volumeScale = 0.05;
             }
-            else if (instrument.type == 3) {
+            else if (instrument.type == 2) {
                 this.wave = getDrumWave(instrument.chipNoise, inverseRealFourierTransform, scaleElementsByFactor);
             }
-            else if (instrument.type == 6) {
+            else if (instrument.type == 5) {
                 this.wave = this.harmonicsWave.getCustomWave(instrument.harmonicsWave, instrument.type);
             }
-            else if (instrument.type == 8) {
+            else if (instrument.type == 7) {
                 this.wave = this.harmonicsWave.getCustomWave(instrument.harmonicsWave, instrument.type);
             }
-            else if (instrument.type == 4) {
+            else if (instrument.type == 3) {
                 this.wave = this.spectrumWave.getCustomWave(instrument.spectrumWave, 8);
             }
-            else if (instrument.type == 5) {
+            else if (instrument.type == 4) {
                 for (let i = 0; i < Config.drumCount; i++) {
                     this.drumsetSpectrumWaves[i].getCustomWave(instrument.drumsetSpectrumWaves[i], InstrumentState._drumsetIndexToSpectrumOctave(i));
                 }
@@ -12665,7 +12665,7 @@ li.select2-results__option[role=group] > strong:hover {
             }
         }
         getDrumsetWave(pitch) {
-            if (this.type == 5) {
+            if (this.type == 4) {
                 return this.drumsetSpectrumWaves[pitch].wave;
             }
             else {
@@ -12922,9 +12922,9 @@ li.select2-results__option[role=group] > strong:hover {
                         continue;
                     const str = Config.modulators[instrument.modulators[mod]].name;
                     if (!((Config.modulators[instrument.modulators[mod]].associatedEffect != 12 && !(tgtInstrument.effects & (1 << Config.modulators[instrument.modulators[mod]].associatedEffect)))
-                        || (tgtInstrument.type != 2 && (str == "fm slider 1" || str == "fm slider 2" || str == "fm slider 3" || str == "fm slider 4" || str == "fm feedback"))
-                        || ((tgtInstrument.type != 7 && tgtInstrument.type != 9) && (str == "pulse width"))
-                        || ((tgtInstrument.type != 9) && (str == "dynamism" || str == "spread" || str == "saw shape"))
+                        || (tgtInstrument.type != 1 && (str == "fm slider 1" || str == "fm slider 2" || str == "fm slider 3" || str == "fm slider 4" || str == "fm feedback"))
+                        || ((tgtInstrument.type != 6 && tgtInstrument.type != 8) && (str == "pulse width"))
+                        || ((tgtInstrument.type != 8) && (str == "dynamism" || str == "spread" || str == "saw shape"))
                         || (!tgtInstrument.getChord().arpeggiates && (str == "arp speed" || str == "reset arp"))
                         || (tgtInstrument.eqFilterType && str == "eq filter")
                         || (!tgtInstrument.eqFilterType && (str == "eq filt cut" || str == "eq filt peak"))
@@ -14516,7 +14516,7 @@ li.select2-results__option[role=group] > strong:hover {
             let basePitch = Config.keys[song.key].basePitch;
             let baseExpression = 1.0;
             let pitchDamping = 48;
-            if (instrument.type == 4) {
+            if (instrument.type == 3) {
                 baseExpression = Config.spectrumBaseExpression;
                 if (isNoiseChannel) {
                     basePitch = Config.spectrumBasePitch;
@@ -14525,36 +14525,36 @@ li.select2-results__option[role=group] > strong:hover {
                 expressionReferencePitch = Config.spectrumBasePitch;
                 pitchDamping = 28;
             }
-            else if (instrument.type == 5) {
+            else if (instrument.type == 4) {
                 basePitch = Config.spectrumBasePitch;
                 baseExpression = Config.drumsetBaseExpression;
                 expressionReferencePitch = basePitch;
             }
-            else if (instrument.type == 3) {
+            else if (instrument.type == 2) {
                 basePitch = Config.chipNoises[instrument.chipNoise].basePitch;
                 baseExpression = Config.noiseBaseExpression;
                 expressionReferencePitch = basePitch;
                 pitchDamping = Config.chipNoises[instrument.chipNoise].isSoft ? 24.0 : 60.0;
             }
-            else if (instrument.type == 2) {
+            else if (instrument.type == 1) {
                 baseExpression = Config.fmBaseExpression;
             }
-            else if (instrument.type == 0 || instrument.type == 10) {
+            else if (instrument.type == 0 || instrument.type == 9) {
                 baseExpression = Config.chipBaseExpression;
             }
-            else if (instrument.type == 6) {
+            else if (instrument.type == 5) {
                 baseExpression = Config.harmonicsBaseExpression;
             }
-            else if (instrument.type == 7) {
+            else if (instrument.type == 6) {
                 baseExpression = Config.pwmBaseExpression;
             }
-            else if (instrument.type == 9) {
+            else if (instrument.type == 8) {
                 baseExpression = Config.supersawBaseExpression;
             }
-            else if (instrument.type == 8) {
+            else if (instrument.type == 7) {
                 baseExpression = Config.pickedStringBaseExpression;
             }
-            else if (instrument.type == 11) {
+            else if (instrument.type == 10) {
                 baseExpression = 1.0;
                 expressionReferencePitch = 0;
                 pitchDamping = 1.0;
@@ -14780,7 +14780,7 @@ li.select2-results__option[role=group] > strong:hover {
                 }
                 let vibratoLfoEnd = Synth.getLFOAmplitude(instrument, secondsPerPart * instrumentState.nextVibratoTime);
                 const vibratoDepthEnvelopeEnd = envelopeEnds[16];
-                if (instrument.type != 11) {
+                if (instrument.type != 10) {
                     let vibratoEnd = vibratoAmplitudeEnd * vibratoLfoEnd * vibratoDepthEnvelopeEnd;
                     if (delayTicks > 0.0) {
                         const ticksUntilVibratoEnd = delayTicks - envelopeComputer.noteTicksEnd;
@@ -14798,7 +14798,7 @@ li.select2-results__option[role=group] > strong:hover {
                     fadeExpressionEnd *= Math.min(1.0, envelopeComputer.noteSecondsEnd / fadeInSeconds);
                 }
             }
-            if (instrument.type == 5 && tone.drumsetPitch == null) {
+            if (instrument.type == 4 && tone.drumsetPitch == null) {
                 tone.drumsetPitch = tone.pitches[0];
                 if (tone.note != null)
                     tone.drumsetPitch += tone.note.pickMainInterval();
@@ -14846,7 +14846,7 @@ li.select2-results__option[role=group] > strong:hover {
                     tone.noteFilterCount = noteFilterSettings.controlPointCount;
                 }
             }
-            if (instrument.type == 5) {
+            if (instrument.type == 4) {
                 const drumsetFilterEnvelope = instrument.getDrumsetEnvelope(tone.drumsetPitch);
                 noteFilterExpression *= EnvelopeComputer.getLowpassCutoffDecayVolumeCompensation(drumsetFilterEnvelope);
                 let drumsetFilterEnvelopeStart = EnvelopeComputer.computeEnvelope(drumsetFilterEnvelope, envelopeComputer.noteSecondsStart, beatsPerPart * partTimeStart, envelopeComputer.noteSizeStart);
@@ -14882,7 +14882,7 @@ li.select2-results__option[role=group] > strong:hover {
                 tone.noteFilterCount++;
             }
             noteFilterExpression = Math.min(3.0, noteFilterExpression);
-            if (instrument.type == 2) {
+            if (instrument.type == 1) {
                 let sineExpressionBoost = 1.0;
                 let totalCarrierExpression = 0.0;
                 let arpeggioInterval = 0;
@@ -15007,13 +15007,13 @@ li.select2-results__option[role=group] > strong:hover {
                 const pitchExpressionEnd = Math.pow(2.0, -(endPitch - expressionReferencePitch) / pitchDamping);
                 tone.prevPitchExpressions[0] = pitchExpressionEnd;
                 let settingsExpressionMult = baseExpression * noteFilterExpression;
-                if (instrument.type == 3) {
+                if (instrument.type == 2) {
                     settingsExpressionMult *= Config.chipNoises[instrument.chipNoise].expression;
                 }
                 if (instrument.type == 0) {
                     settingsExpressionMult *= Config.chipWaves[instrument.chipWave].expression;
                 }
-                if (instrument.type == 7) {
+                if (instrument.type == 6) {
                     const basePulseWidth = getPulseWidthRatio(instrument.pulseWidth);
                     let pulseWidthModStart = basePulseWidth;
                     let pulseWidthModEnd = basePulseWidth;
@@ -15026,7 +15026,7 @@ li.select2-results__option[role=group] > strong:hover {
                     tone.pulseWidth = pulseWidthStart;
                     tone.pulseWidthDelta = (pulseWidthEnd - pulseWidthStart) / roundedSamplesPerTick;
                 }
-                if (instrument.type == 8) {
+                if (instrument.type == 7) {
                     let useSustainStart = instrument.stringSustain;
                     let useSustainEnd = instrument.stringSustain;
                     if (this.isModActive(Config.modulators.dictionary["sustain"].index, channelIndex, tone.instrumentIndex)) {
@@ -15038,9 +15038,9 @@ li.select2-results__option[role=group] > strong:hover {
                     settingsExpressionMult *= Math.pow(2.0, 0.7 * (1.0 - useSustainStart / (Config.stringSustainRange - 1)));
                 }
                 const startFreq = Instrument.frequencyFromPitch(startPitch);
-                if (instrument.type == 0 || instrument.type == 10 || instrument.type == 6 || instrument.type == 8) {
+                if (instrument.type == 0 || instrument.type == 9 || instrument.type == 5 || instrument.type == 7) {
                     const unison = Config.unisons[instrument.unison];
-                    const voiceCountExpression = (instrument.type == 8) ? 1 : unison.voices / 2.0;
+                    const voiceCountExpression = (instrument.type == 7) ? 1 : unison.voices / 2.0;
                     settingsExpressionMult *= unison.expression * voiceCountExpression;
                     const unisonEnvelopeStart = envelopeStarts[4];
                     const unisonEnvelopeEnd = envelopeEnds[4];
@@ -15059,7 +15059,7 @@ li.select2-results__option[role=group] > strong:hover {
                 }
                 let supersawExpressionStart = 1.0;
                 let supersawExpressionEnd = 1.0;
-                if (instrument.type == 9) {
+                if (instrument.type == 8) {
                     const minFirstVoiceAmplitude = 1.0 / Math.sqrt(Config.supersawVoiceCount);
                     let useDynamismStart = instrument.supersawDynamism / Config.supersawDynamismMax;
                     let useDynamismEnd = instrument.supersawDynamism / Config.supersawDynamismMax;
@@ -15191,7 +15191,7 @@ li.select2-results__option[role=group] > strong:hover {
                 }
                 tone.expression = expressionStart;
                 tone.expressionDelta = (expressionEnd - expressionStart) / roundedSamplesPerTick;
-                if (instrument.type == 8) {
+                if (instrument.type == 7) {
                     let stringDecayStart;
                     if (tone.prevStringDecay != null) {
                         stringDecayStart = tone.prevStringDecay;
@@ -15226,7 +15226,7 @@ li.select2-results__option[role=group] > strong:hover {
             return effect;
         }
         static getInstrumentSynthFunction(instrument) {
-            if (instrument.type == 2) {
+            if (instrument.type == 1) {
                 const fingerprint = instrument.algorithm + "_" + instrument.feedbackType;
                 if (Synth.fmSynthFunctionCache[fingerprint] == undefined) {
                     const synthSource = [];
@@ -15280,31 +15280,31 @@ li.select2-results__option[role=group] > strong:hover {
             else if (instrument.type == 0) {
                 return Synth.chipSynth;
             }
-            else if (instrument.type == 10) {
+            else if (instrument.type == 9) {
                 return Synth.chipSynth;
             }
-            else if (instrument.type == 6) {
+            else if (instrument.type == 5) {
                 return Synth.harmonicsSynth;
             }
-            else if (instrument.type == 7) {
+            else if (instrument.type == 6) {
                 return Synth.pulseWidthSynth;
             }
-            else if (instrument.type == 9) {
+            else if (instrument.type == 8) {
                 return Synth.supersawSynth;
             }
-            else if (instrument.type == 8) {
+            else if (instrument.type == 7) {
                 return Synth.pickedStringSynth;
             }
-            else if (instrument.type == 3) {
+            else if (instrument.type == 2) {
                 return Synth.noiseSynth;
             }
-            else if (instrument.type == 4) {
+            else if (instrument.type == 3) {
                 return Synth.spectrumSynth;
             }
-            else if (instrument.type == 5) {
+            else if (instrument.type == 4) {
                 return Synth.drumsetSynth;
             }
-            else if (instrument.type == 11) {
+            else if (instrument.type == 10) {
                 return Synth.modSynth;
             }
             else {
@@ -15316,7 +15316,7 @@ li.select2-results__option[role=group] > strong:hover {
             const data = synth.tempMonoInstrumentSampleBuffer;
             const wave = instrumentState.wave;
             const volumeScale = instrumentState.volumeScale;
-            const waveLength = (aliases && instrumentState.type == 10) ? wave.length : wave.length - 1;
+            const waveLength = (aliases && instrumentState.type == 9) ? wave.length : wave.length - 1;
             const unisonSign = tone.specialIntervalExpressionMult * instrumentState.unison.sign;
             if (instrumentState.unison.voices == 1 && !instrumentState.chord.customInterval)
                 tone.phases[1] = tone.phases[0];
@@ -17324,8 +17324,8 @@ li.select2-results__option[role=group] > strong:hover {
             ]);
             if (isNoise) {
                 const type = selectWeightedRandom([
-                    { item: 3, weight: 1 },
-                    { item: 4, weight: 3 },
+                    { item: 2, weight: 1 },
+                    { item: 3, weight: 3 },
                 ]);
                 instrument.preset = instrument.type = type;
                 instrument.fadeIn = (Math.random() < 0.8) ? 0 : selectCurvedDistribution(0, Config.fadeInRange - 1, 0, 2);
@@ -17437,12 +17437,12 @@ li.select2-results__option[role=group] > strong:hover {
                     }
                 }
                 switch (type) {
-                    case 3:
+                    case 2:
                         {
                             instrument.chipNoise = (Math.random() * Config.chipNoises.length) | 0;
                         }
                         break;
-                    case 4:
+                    case 3:
                         {
                             const spectrumGenerators = [
                                 () => {
@@ -17486,17 +17486,17 @@ li.select2-results__option[role=group] > strong:hover {
             else {
                 const type = selectWeightedRandom([
                     { item: 0, weight: 4 },
-                    { item: 7, weight: 4 },
-                    { item: 9, weight: 5 },
-                    { item: 6, weight: 5 },
+                    { item: 6, weight: 4 },
                     { item: 8, weight: 5 },
-                    { item: 4, weight: 1 },
-                    { item: 2, weight: 5 },
+                    { item: 5, weight: 5 },
+                    { item: 7, weight: 5 },
+                    { item: 3, weight: 1 },
+                    { item: 1, weight: 5 },
                 ]);
                 instrument.preset = instrument.type = type;
                 instrument.fadeIn = (Math.random() < 0.5) ? 0 : selectCurvedDistribution(0, Config.fadeInRange - 1, 0, 2);
                 instrument.fadeOut = selectCurvedDistribution(0, Config.fadeOutTicks.length - 1, Config.fadeOutNeutral, 2);
-                if (type == 0 || type == 6 || type == 8) {
+                if (type == 0 || type == 5 || type == 7) {
                     instrument.unison = Config.unisons.dictionary[selectWeightedRandom([
                         { item: "none", weight: 10 },
                         { item: "shimmer", weight: 5 },
@@ -17626,10 +17626,10 @@ li.select2-results__option[role=group] > strong:hover {
                             instrument.chipWave = (Math.random() * Config.chipWaves.length) | 0;
                         }
                         break;
-                    case 7:
-                    case 9:
+                    case 6:
+                    case 8:
                         {
-                            if (type == 9) {
+                            if (type == 8) {
                                 instrument.supersawDynamism = selectCurvedDistribution(0, Config.supersawDynamismMax, Config.supersawDynamismMax, 2);
                                 instrument.supersawSpread = selectCurvedDistribution(0, Config.supersawSpreadMax, Math.ceil(Config.supersawSpreadMax / 3), 4);
                                 instrument.supersawShape = selectCurvedDistribution(0, Config.supersawShapeMax, 0, 4);
@@ -17660,10 +17660,10 @@ li.select2-results__option[role=group] > strong:hover {
                             }
                         }
                         break;
-                    case 8:
-                    case 6:
+                    case 7:
+                    case 5:
                         {
-                            if (type == 8) {
+                            if (type == 7) {
                                 instrument.stringSustain = (Math.random() * Config.stringSustainRange) | 0;
                             }
                             const harmonicGenerators = [
@@ -17703,7 +17703,7 @@ li.select2-results__option[role=group] > strong:hover {
                             instrument.harmonicsWave.markCustomWaveDirty();
                         }
                         break;
-                    case 4:
+                    case 3:
                         {
                             const spectrum = [];
                             for (let i = 0; i < Config.spectrumControlPoints; i++) {
@@ -17722,7 +17722,7 @@ li.select2-results__option[role=group] > strong:hover {
                             instrument.spectrumWave.markCustomWaveDirty();
                         }
                         break;
-                    case 2:
+                    case 1:
                         {
                             instrument.algorithm = (Math.random() * Config.algorithms.length) | 0;
                             instrument.feedbackType = (Math.random() * Config.feedbacks.length) | 0;
@@ -22284,7 +22284,7 @@ li.select2-results__option[role=group] > strong:hover {
             let midiChannelCounter = 0;
             let foundADrumset = false;
             for (let channel = 0; channel < this._doc.song.pitchChannelCount + this._doc.song.noiseChannelCount; channel++) {
-                if (!foundADrumset && this._doc.song.channels[channel].instruments[0].type == 5) {
+                if (!foundADrumset && this._doc.song.channels[channel].instruments[0].type == 4) {
                     tracks.push({ isMeta: false, channel: channel, midiChannel: 9, isNoise: true, isDrumset: true });
                     foundADrumset = true;
                 }
@@ -22408,11 +22408,11 @@ li.select2-results__option[role=group] > strong:hover {
                                 if (preset != null && preset.midiProgram != undefined) {
                                     instrumentProgram = preset.midiProgram;
                                 }
-                                else if (instrument.type == 5) {
+                                else if (instrument.type == 4) {
                                     instrumentProgram = 116;
                                 }
                                 else {
-                                    if (instrument.type == 3 || instrument.type == 4) {
+                                    if (instrument.type == 2 || instrument.type == 3) {
                                         if (isNoise) {
                                             instrumentProgram = 116;
                                         }
@@ -22425,13 +22425,13 @@ li.select2-results__option[role=group] > strong:hover {
                                             instrumentProgram = ExportPrompt.midiChipInstruments[instrument.chipWave];
                                         }
                                     }
-                                    else if (instrument.type == 7 || instrument.type == 2 || instrument.type == 6 || instrument.type == 9) {
+                                    else if (instrument.type == 6 || instrument.type == 1 || instrument.type == 5 || instrument.type == 8) {
                                         instrumentProgram = 81;
                                     }
-                                    else if (instrument.type == 8) {
+                                    else if (instrument.type == 7) {
                                         instrumentProgram = 0x19;
                                     }
-                                    else if (instrument.type == 10) {
+                                    else if (instrument.type == 9) {
                                         instrumentProgram = 81;
                                     }
                                     else {
@@ -22468,11 +22468,11 @@ li.select2-results__option[role=group] > strong:hover {
                             let usesArpeggio = instrument.getChord().arpeggiates;
                             let polyphony = usesArpeggio ? 1 : Config.maxChordSize;
                             if (instrument.getChord().customInterval) {
-                                if (instrument.type == 0 || instrument.type == 6) {
+                                if (instrument.type == 0 || instrument.type == 5) {
                                     polyphony = 2;
                                     usesArpeggio = true;
                                 }
-                                else if (instrument.type == 2) {
+                                else if (instrument.type == 1) {
                                     polyphony = Config.operatorCount;
                                 }
                                 else {
@@ -23755,7 +23755,7 @@ You should be redirected to the song at:<br /><br />
                                                 instrument.preset = presetValue;
                                             }
                                             else {
-                                                instrument.setTypeAndReset(isModChannel ? 11 : (isNoiseChannel ? 3 : 0), isNoiseChannel, isModChannel);
+                                                instrument.setTypeAndReset(isModChannel ? 10 : (isNoiseChannel ? 2 : 0), isNoiseChannel, isModChannel);
                                                 instrument.chord = 0;
                                             }
                                             instrument.volume = currentInstrumentVolume;
@@ -30016,19 +30016,19 @@ You should be redirected to the song at:<br /><br />
     function buildPresetOptions(isNoise, idSet) {
         const menu = select$8({ id: idSet });
         if (isNoise) {
+            menu.appendChild(option$8({ value: 2 }, EditorConfig.valueToPreset(2).name));
             menu.appendChild(option$8({ value: 3 }, EditorConfig.valueToPreset(3).name));
             menu.appendChild(option$8({ value: 4 }, EditorConfig.valueToPreset(4).name));
-            menu.appendChild(option$8({ value: 5 }, EditorConfig.valueToPreset(5).name));
         }
         else {
             menu.appendChild(option$8({ value: 0 }, EditorConfig.valueToPreset(0).name));
-            menu.appendChild(option$8({ value: 7 }, EditorConfig.valueToPreset(7).name));
-            menu.appendChild(option$8({ value: 9 }, EditorConfig.valueToPreset(9).name));
             menu.appendChild(option$8({ value: 6 }, EditorConfig.valueToPreset(6).name));
             menu.appendChild(option$8({ value: 8 }, EditorConfig.valueToPreset(8).name));
-            menu.appendChild(option$8({ value: 4 }, EditorConfig.valueToPreset(4).name));
-            menu.appendChild(option$8({ value: 2 }, EditorConfig.valueToPreset(2).name));
-            menu.appendChild(option$8({ value: 10 }, EditorConfig.valueToPreset(10).name));
+            menu.appendChild(option$8({ value: 5 }, EditorConfig.valueToPreset(5).name));
+            menu.appendChild(option$8({ value: 7 }, EditorConfig.valueToPreset(7).name));
+            menu.appendChild(option$8({ value: 3 }, EditorConfig.valueToPreset(3).name));
+            menu.appendChild(option$8({ value: 1 }, EditorConfig.valueToPreset(1).name));
+            menu.appendChild(option$8({ value: 9 }, EditorConfig.valueToPreset(9).name));
         }
         const randomGroup = optgroup({ label: "Randomize ▾" });
         randomGroup.appendChild(option$8({ value: "randomPreset" }, "Random Preset"));
@@ -30633,7 +30633,7 @@ You should be redirected to the song at:<br /><br />
                         $("#drumPresetSelect").parent().hide();
                         setSelectedValue(this._pitchedPresetSelect, instrument.preset, true);
                     }
-                    if (instrument.type == 3) {
+                    if (instrument.type == 2) {
                         this._chipWaveSelectRow.style.display = "none";
                         this._chipNoiseSelectRow.style.display = "";
                         setSelectedValue(this._chipNoiseSelect, instrument.chipNoise, true);
@@ -30641,7 +30641,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._chipNoiseSelectRow.style.display = "none";
                     }
-                    if (instrument.type == 4) {
+                    if (instrument.type == 3) {
                         this._chipWaveSelectRow.style.display = "none";
                         this._spectrumRow.style.display = "";
                         this._spectrumEditor.render();
@@ -30649,7 +30649,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._spectrumRow.style.display = "none";
                     }
-                    if (instrument.type == 6 || instrument.type == 8) {
+                    if (instrument.type == 5 || instrument.type == 7) {
                         this._chipWaveSelectRow.style.display = "none";
                         this._harmonicsRow.style.display = "";
                         this._harmonicsEditor.render();
@@ -30657,7 +30657,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._harmonicsRow.style.display = "none";
                     }
-                    if (instrument.type == 8) {
+                    if (instrument.type == 7) {
                         this._chipWaveSelectRow.style.display = "none";
                         this._stringSustainRow.style.display = "";
                         this._stringSustainSlider.updateValue(instrument.stringSustain);
@@ -30666,7 +30666,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._stringSustainRow.style.display = "none";
                     }
-                    if (instrument.type == 5) {
+                    if (instrument.type == 4) {
                         this._drumsetGroup.style.display = "";
                         this._chipWaveSelectRow.style.display = "none";
                         this._fadeInOutRow.style.display = "none";
@@ -30684,14 +30684,14 @@ You should be redirected to the song at:<br /><br />
                         this._chipWaveSelectRow.style.display = "";
                         setSelectedValue(this._chipWaveSelect, instrument.chipWave);
                     }
-                    if (instrument.type == 10) {
+                    if (instrument.type == 9) {
                         this._customWaveDraw.style.display = "";
                         this._chipWaveSelectRow.style.display = "none";
                     }
                     else {
                         this._customWaveDraw.style.display = "none";
                     }
-                    if (instrument.type == 9) {
+                    if (instrument.type == 8) {
                         this._supersawDynamismRow.style.display = "";
                         this._supersawSpreadRow.style.display = "";
                         this._supersawShapeRow.style.display = "";
@@ -30704,7 +30704,7 @@ You should be redirected to the song at:<br /><br />
                         this._supersawSpreadRow.style.display = "none";
                         this._supersawShapeRow.style.display = "none";
                     }
-                    if (instrument.type == 7 || instrument.type == 9) {
+                    if (instrument.type == 6 || instrument.type == 8) {
                         this._chipWaveSelectRow.style.display = "none";
                         this._pulseWidthRow.style.display = "";
                         this._pulseWidthSlider.input.title = prettyNumber(instrument.pulseWidth) + "%";
@@ -30713,7 +30713,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._pulseWidthRow.style.display = "none";
                     }
-                    if (instrument.type == 2) {
+                    if (instrument.type == 1) {
                         this._algorithmSelectRow.style.display = "";
                         this._phaseModGroup.style.display = "";
                         this._feedbackRow1.style.display = "";
@@ -30837,7 +30837,7 @@ You should be redirected to the song at:<br /><br />
                     }
                     if (effectsIncludeDistortion(instrument.effects)) {
                         this._distortionRow.style.display = "";
-                        if (instrument.type == 0 || instrument.type == 10 || instrument.type == 7 || instrument.type == 9)
+                        if (instrument.type == 0 || instrument.type == 9 || instrument.type == 6 || instrument.type == 8)
                             this._aliasingRow.style.display = "";
                         else
                             this._aliasingRow.style.display = "none";
@@ -30892,7 +30892,7 @@ You should be redirected to the song at:<br /><br />
                     else {
                         this._reverbRow.style.display = "none";
                     }
-                    if (instrument.type == 0 || instrument.type == 10 || instrument.type == 6 || instrument.type == 8) {
+                    if (instrument.type == 0 || instrument.type == 9 || instrument.type == 5 || instrument.type == 7) {
                         this._unisonSelectRow.style.display = "";
                         setSelectedValue(this._unisonSelect, instrument.unison);
                     }
@@ -30946,7 +30946,7 @@ You should be redirected to the song at:<br /><br />
                     this._envelopeSpeedSlider.updateValue(instrument.envelopeSpeed);
                     this._envelopeSpeedSlider.input.title = "x" + prettyNumber(Config.arpSpeedScale[instrument.envelopeSpeed]);
                     this._envelopeSpeedDisplay.textContent = "x" + prettyNumber(Config.arpSpeedScale[instrument.envelopeSpeed]);
-                    if (instrument.type == 10) {
+                    if (instrument.type == 9) {
                         this._customWaveDrawCanvas.redrawCanvas();
                         if (this.prompt instanceof CustomChipPrompt) {
                             this.prompt.customChipCanvas.render();
@@ -31171,22 +31171,22 @@ You should be redirected to the song at:<br /><br />
                                     settingList.push("eq filt cut");
                                     settingList.push("eq filt peak");
                                 }
-                                if (tgtInstrumentTypes.includes(2)) {
+                                if (tgtInstrumentTypes.includes(1)) {
                                     settingList.push("fm slider 1");
                                     settingList.push("fm slider 2");
                                     settingList.push("fm slider 3");
                                     settingList.push("fm slider 4");
                                     settingList.push("fm feedback");
                                 }
-                                if (tgtInstrumentTypes.includes(7) || tgtInstrumentTypes.includes(9)) {
+                                if (tgtInstrumentTypes.includes(6) || tgtInstrumentTypes.includes(8)) {
                                     settingList.push("pulse width");
                                 }
-                                if (tgtInstrumentTypes.includes(9)) {
+                                if (tgtInstrumentTypes.includes(8)) {
                                     settingList.push("dynamism");
                                     settingList.push("spread");
                                     settingList.push("saw shape");
                                 }
-                                if (tgtInstrumentTypes.includes(8)) {
+                                if (tgtInstrumentTypes.includes(7)) {
                                     settingList.push("sustain");
                                 }
                                 if (anyInstrumentArps) {
