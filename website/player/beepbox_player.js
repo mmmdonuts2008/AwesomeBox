@@ -4552,7 +4552,6 @@ var beepbox = (function (exports) {
         {
             name: "Custom Instruments", presets: toNameMap([
                 { name: "chip wave", customType: 0 },
-                { name: "chip wave times 2", customType: 0 },
                 { name: "FM (expert)", customType: 1 },
                 { name: "basic noise", customType: 2 },
                 { name: "spectrum", customType: 3 },
