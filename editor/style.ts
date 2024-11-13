@@ -853,6 +853,12 @@ document.head.appendChild(HTML.style({ type: "text/css" }, `
   outline: none;
 }
 
+@media (min-width: 711px) {
+	.select2 {
+	  width: calc(var(--settings-area-width) * 0.625) !important;
+	}
+}
+
 .select2-selection__rendered:not(.menu)::before {
 	content: "";
 	position: absolute;

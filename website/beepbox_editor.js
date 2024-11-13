@@ -798,6 +798,7 @@ var beepbox = (function (exports) {
         {
             name: "Custom Instruments", presets: toNameMap([
                 { name: "chip wave", customType: 0 },
+                { name: "chip wave times 2", customType: 0 },
                 { name: "FM (expert)", customType: 1 },
                 { name: "basic noise", customType: 2 },
                 { name: "spectrum", customType: 3 },
@@ -5680,6 +5681,12 @@ var beepbox = (function (exports) {
   border: 0px;
   background-color: transparent;
   outline: none;
+}
+
+@media (min-width: 711px) {
+	.select2 {
+	  width: calc(var(--settings-area-width) * 0.625) !important;
+	}
 }
 
 .select2-selection__rendered:not(.menu)::before {
